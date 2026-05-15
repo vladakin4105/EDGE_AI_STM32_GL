@@ -1,0 +1,16 @@
+../LWIP/Target/ethernetif.c:115:16:ETH_PHY_IO_Init	1
+../LWIP/Target/ethernetif.c:116:16:ETH_PHY_IO_DeInit	1
+../LWIP/Target/ethernetif.c:117:16:ETH_PHY_IO_WriteReg	2
+../LWIP/Target/ethernetif.c:121:16:ETH_PHY_IO_ReadReg	2
+../LWIP/Target/ethernetif.c:125:16:ETH_PHY_IO_GetTick	1
+../LWIP/Target/ethernetif.c:145:13:low_level_init	4
+../LWIP/Target/ethernetif.c:276:14:low_level_output	5
+../LWIP/Target/ethernetif.c:323:22:low_level_input	2
+../LWIP/Target/ethernetif.c:344:6:ethernetif_input	4
+../LWIP/Target/ethernetif.c:394:7:ethernetif_init	2
+../LWIP/Target/ethernetif.c:445:6:pbuf_free_custom	2
+../LWIP/Target/ethernetif.c:467:7:sys_now	1
+../LWIP/Target/ethernetif.c:482:6:ethernet_link_check_state	1
+../LWIP/Target/ethernetif.c:487:6:HAL_ETH_RxAllocateCallback	2
+../LWIP/Target/ethernetif.c:509:6:HAL_ETH_RxLinkCallback	3
+../LWIP/Target/ethernetif.c:546:6:HAL_ETH_TxFreeCallback	1

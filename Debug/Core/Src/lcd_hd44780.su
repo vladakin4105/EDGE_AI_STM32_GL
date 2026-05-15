@@ -1,0 +1,8 @@
+../Core/Src/lcd_hd44780.c:7:13:lcd_pulse_enable	8	static
+../Core/Src/lcd_hd44780.c:14:13:lcd_write_nibble	16	static
+../Core/Src/lcd_hd44780.c:22:13:lcd_send	16	static
+../Core/Src/lcd_hd44780.c:29:6:lcd_init	8	static
+../Core/Src/lcd_hd44780.c:46:6:lcd_clear	8	static
+../Core/Src/lcd_hd44780.c:51:6:lcd_set_cursor	24	static
+../Core/Src/lcd_hd44780.c:56:6:lcd_print	16	static
+../Core/Src/lcd_hd44780.c:63:6:lcd_backlight	16	static
