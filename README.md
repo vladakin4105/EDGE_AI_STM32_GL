@@ -1,25 +1,25 @@
-# STM32 Edge AI: TinyML Environmental Anomaly Detection 🌱🤖
+# STM32 Edge AI: TinyML Environmental Anomaly Detection
 
-Acest proiect reprezintă un sistem integrat de tip **Edge AI (TinyML)** construit pe o arhitectură bare-metal, destinat monitorizării calității aerului și detecției anomaliilor de mediu direct la sursă. Sistemul citește date de la senzori, rulează un model hibrid de Machine Learning local (în sub 1 ms) și raportează datele în cloud via Ethernet.
+This project represents an integrated Edge AI (TinyML) system built on a bare-metal architecture, designed for real-time environmental air quality monitoring and anomaly detection directly at the source. The system reads sensor data, runs a hybrid local Machine Learning model (under 1 ms), and reports the data to the cloud via Ethernet.
 
-Proiectul a fost dezvoltat pe **Global Logic Starter Kit** (bazat pe STM32F407VGTx) și a fost prezentat la Sesiunea de Comunicări Științifice Studențești (SCSS) 2026.
+The project was developed on the Global Logic Starter Kit (based on STM32F407VGTx) and was presented at the Student Scientific Communications Session (SCSS) 2026.
 
-## 🚀 Funcționalități Principale
-* **Inferență Locală Ultra-Rapidă:** Un model hibrid (Neural Network Classifier + K-Means Anomaly Detection) antrenat în Edge Impulse, capabil să ia decizii în **1 ms**.
-* **Amprentă de Memorie Redusă:** Soluția TinyML ocupă doar ~65 KB memorie Flash și ~5 KB RAM.
-* **Stivă Ethernet Bare-Metal:** Implementare custom pentru cipul PHY **KSZ8021RNL** via RMII/MDIO, rulând stiva LwIP fără un sistem de operare (RTOS).
-* **Cloud Integration:** Transmitere de date asincronă către API-ul **ThingSpeak**, respectând restricțiile de rate-limiting (15s).
-* **Interfață Locală:** Afișare în timp real pe un display LCD 16x2 și prin interfață serială (USART3).
+## Key Features
+* **Ultra-Fast Local Inference:** A hybrid model (Neural Network Classifier + K-Means Anomaly Detection) trained in Edge Impulse, capable of making decisions in 1 ms.
+* **Low Memory Footprint:** The TinyML solution occupies only ~65 KB of Flash memory and ~5 KB of RAM.
+* **Bare-Metal Ethernet Stack:** Custom implementation for the KSZ8021RNL PHY chip via RMII/MDIO, running the LwIP stack without a Real-Time Operating System (RTOS).
+* **Cloud Integration:** Asynchronous data transmission to the ThingSpeak API, strictly adhering to rate-limiting constraints (15-second intervals).
+* **Local Interface:** Real-time display on a 16x2 LCD and serial interface (USART3).
 
-## 🛠️ Hardware Utilizat
-* **Placă de bază:** Microcontroler STM32F407VGTx (ARM Cortex-M4 cu FPU).
-* **Kit Extensie:** Global Logic Starter Kit v1.x.
-* **Senzor DHT11:** Pentru temperatură și umiditate (Pin PD11 - Protocol 1-Wire via TIM6).
-* **Senzor AGS10:** Pentru detectarea compușilor organici volatili totali / TVOC (Magistrala I2C1 - PB6, PB7).
-* **Ethernet:** Cip PHY KSZ8021RNL (Magistrala RMII 100 Mbps).
+## Hardware Requirements
+* **Main Board:** STM32F407VGTx Microcontroller (ARM Cortex-M4 with FPU).
+* **Extension Kit:** Global Logic Starter Kit v1.x.
+* **DHT11 Sensor:** For temperature and humidity (Pin PD11 - 1-Wire Protocol via TIM6).
+* **AGS10 Sensor:** For Total Volatile Organic Compounds (TVOC) detection (I2C1 Bus - PB6, PB7).
+* **Ethernet:** KSZ8021RNL PHY Chip (RMII Bus 100 Mbps).
 
-## 💻 Software & Toolchain
-* **IDE:** STM32CubeIDE (suport mixt C/C++ GCC).
-* **Stivă TCP/IP:** LwIP (Lightweight IP).
+## Software & Toolchain
+* **IDE:** STM32CubeIDE (mixed C/C++ GCC support).
+* **TCP/IP Stack:** LwIP (Lightweight IP).
 * **Machine Learning:** Edge Impulse SDK (TensorFlow Lite for Microcontrollers).
-* **Limbaje:** C (pentru drivere și LwIP), C++ (pentru modelul ML), Python (scripturi pentru generare dataset).
+* **Languages:** C (for drivers and LwIP), C++ (for the ML model), Python (dataset generation scripts).
